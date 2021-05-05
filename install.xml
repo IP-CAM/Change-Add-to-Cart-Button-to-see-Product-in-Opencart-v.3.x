@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name><![CDATA[Change button add to cart to see product]]></name>
+  <code><![CDATA[reds-change-button-add-to-cart-to-see-product]]></code>
+	<version><![CDATA[1.0]]></version>
+	<author><![CDATA[REDS]]></author>
+	<link><![CDATA[https://www.agenciaprai.com/]]></link>
+		
+    <file path="catalog/view/theme/*/template/extension/module/{latest,featured,bestseller,special}.twig|catalog/view/theme/*/template/product/{category,special,search,manufacturer_info}.twig">
+			<operation error="skip">
+				<search><![CDATA[onclick="cart.add('{{ product.product_id }}');]]></search>
+				<add position="replace"><![CDATA[window.location.href={{ product.href }};]]></add>
+			</operation>
+    </file>
+</modification>
